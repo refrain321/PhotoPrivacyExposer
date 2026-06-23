@@ -1,0 +1,15 @@
+照片隐形足迹曝光器 - 项目包
+
+【推荐使用】
+双击 release\PhotoPrivacyExposer_SMOOTH_MAP.exe
+这是最终丝滑地图版，支持拖动、缩放地图。
+
+【源代码】
+src\desktop_webview_app.py  最终桌面版主程序
+src\app.py                  Streamlit 网页版
+src\desktop_app.py          旧版 Tkinter 桌面程序
+
+【重新打包丝滑版】
+cd src 上级目录后执行：
+python -m pip install -r src\desktop_requirements.txt pywebview
+python -m PyInstaller --noconfirm --onefile --windowed --name PhotoPrivacyExposer_SMOOTH_MAP --hidden-import=webview.platforms.edgechromium desktop_webview_app.py
